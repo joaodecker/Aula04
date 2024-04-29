@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades JavaScript</title>
+</head>
+<body>
+    <!-- 1. Mensagem de 'Olá Mundo' -->
+    <h2>1. Mensagem de 'Olá Mundo'</h2>
+    <script>
+        console.log('Olá Mundo');
+    </script>
+
+    <!-- 2. Soma de 2 inteiros -->
+    <h2>2. Soma de 2 inteiros</h2>
+    <input type="number" id="numero1" placeholder="Número 1">
+    <input type="number" id="numero2" placeholder="Número 2">
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    <p id="resultadoSoma"></p>
+    <script>
+        function calcularSoma() {
+            let num1 = parseFloat(document.getElementById('numero1').value);
+            let num2 = parseFloat(document.getElementById('numero2').value);
+            let resultado = num1 + num2;
+            document.getElementById('resultadoSoma').textContent = 'Resultado: ' + resultado;
+        }
+    </script>
+
+    <!-- 3. Alterar propriedade de um elemento por id -->
+    <h2>3. Alterar propriedade de um elemento por id</h2>
+    <input type="text" id="novoTextoId" placeholder="Novo texto">
+    <button onclick="alterarPorId()">Alterar Texto</button>
+    <script>
+        function alterarPorId() {
+            let novoTexto = document.getElementById('novoTextoId').value;
+            let paragrafo = document.getElementById('meuParagrafo');
+            paragrafo.textContent = novoTexto;
+        }
+    </script>
+    <p id="meuParagrafo">Texto inicial</p>
+
+    <!-- 4. Alterar propriedade de um elemento por name -->
+    <h2>4. Alterar propriedade de um elemento por name</h2>
+    <input type="text" id="novoValorName" placeholder="Novo valor">
+    <button onclick="alterarPorName()">Alterar Valor</button>
+    <script>
+        function alterarPorName() {
+            let novoValor = document.getElementById('novoValorName').value;
+            let inputs = document.getElementsByName('meuInput');
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].value = novoValor;
+            }
+        }
+    </script>
+    <input type="text" name="meuInput" value="Valor inicial">
+
+
+    <!-- 5. Alterar propriedade de um elemento por class -->
+    <h2>5. Alterar propriedade de um elemento por class</h2>
+    <input type="text" id="novoTextoClasse" placeholder="Novo texto">
+    <button onclick="alterarPorClasse()">Alterar Texto</button>
+    <script>
+        function alterarPorClasse() {
+            let novoTexto = document.getElementById('novoTextoClasse').value;
+            let elementos = document.getElementsByClassName('minhaClasse');
+            for (let i = 0; i < elementos.length; i++) {
+                elementos[i].textContent = novoTexto;
+            }
+        }
+    </script>
+    <p class="minhaClasse">Texto inicial 1</p>
+</body>
+</html>
